@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['usuario'])) {
     header("Location: ./iniciarSesion.php");
     exit;
 }
-
 if (!isset($_SESSION['esp32Ip'])) {
     header("Location: ./configuracionIp.php");
     exit;
@@ -15,39 +13,97 @@ $esp32Ip = $_SESSION['esp32Ip'];
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Estado del Tanque</title>
+    <meta charset="UTF-8" />
+    <title>Estado del Tanque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
-<body>
+<body class="container d-flex align-items-center min-vh-100 py-4">
+    <div class="w-100">
+        <div class="card shadow mx-auto" style="max-width: 600px;">
+            <div class="card-header text-center bg-transparent">
+                <h1 class="titulo m-0">Estado del Tanque</h1>
+            </div>
+            
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <img id="tanqueImg" src="../img/c1.jpg" alt="Tanque" class="img-fluid rounded" style="max-height: 180px;">
+                </div>
 
-  <h1>Estado del Tanque</h1>
+                <div id="error" class="error mb-3"></div>
+                <div id="loading" class="loading-indicator mb-3" style="display: none;">
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    Cargando datos del tanque...
+                </div>
 
-  <div id="error" style="color: red;"></div>
-  <div id="loading" style="display: none; color: blue;">Cargando...</div>
+                <div class="info-tanque bg-light rounded p-3 mb-4">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Altura total: <span id="altura" class="fw-bold">--</span> cm</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Radio: <span id="radio" class="fw-bold">--</span> cm</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Nivel de agua: <span id="nivelAgua" class="fw-bold">--</span> cm</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Volumen: <span id="volumen" class="fw-bold">--</span> litros</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Temperatura: <span id="temperatura" class="fw-bold">--</span> °C</p>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <p class="texto m-0">Humedad: <span id="humedad" class="fw-bold">--</span> %</p>
+                        </div>
+                    </div>
+                </div>
 
-  <div id="info">
-    <p>Altura total: <span id="altura"></span> cm</p>
-    <p>Radio: <span id="radio"></span> cm</p>
-    <p>Nivel de agua: <span id="nivelAgua"></span> cm</p>
-    <p>Volumen: <span id="volumen"></span> litros</p>
-    <p>Temperatura: <span id="temperatura"></span>°C</p>
-    <p>Humedad: <span id="humedad"></span>%</p>
-  </div>
+                <div class="text-center">
+                    <button id="configBtn" class="btn btn-custom px-4">Configurar Tanque</button>
+                </div>
+            </div>
+        </div>
 
-  <img id="tanqueImg" src="../img/c1.jpg" alt="Tanque" style="width:200px;" />
+        <div id="modal" class="modal-fullscreen-custom">
+            <div class="card mx-auto my-4" style="max-width: 500px;">
+                <div class="card-header text-center">
+                    <h3 class="titulo m-0">Configurar Tanque</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Altura (cm):</label>
+                        <input type="number" id="inputAltura" class="form-control input">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Radio (cm):</label>
+                        <input type="number" id="inputRadio" class="form-control input">
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button id="saveBtn" class="btn btn-custom flex-grow-1">Guardar</button>
+                        <button id="cancelBtn" class="btn btn-outline-secondary flex-grow-1">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <button id="configBtn">Configurar Tanque</button>
+    <script>
+        const esp32Ip = "<?php echo $esp32Ip; ?>";
+        const configBtn = document.getElementById('configBtn');
+        const modal = document.getElementById('modal');
+        const cancelBtn = document.getElementById('cancelBtn');
 
-  <div id="modal" style="display: none; padding: 20px; border: 1px solid #000; margin-top: 20px;">
-    <label>Altura (cm): <input type="number" id="inputAltura" /></label><br/><br/>
-    <label>Radio (cm): <input type="number" id="inputRadio" /></label><br/><br/>
-    <button id="saveBtn">Guardar</button>
-    <button id="cancelBtn">Cancelar</button>
-  </div>
+        configBtn.addEventListener('click', () => {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
 
-  <script>
-    const esp32Ip = "<?php echo $esp32Ip; ?>";
-  </script>
-  <script src="../js/tanque.js"></script>
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    <script src="../js/tanque.js"></script>
 </body>
 </html>
