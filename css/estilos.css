@@ -112,6 +112,24 @@
     display: block;
     width: 100%;
   }
+
+  .logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e78f4d;
+    background-color: var(--boton-bg);
+    color: var(--boton-text);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+}
   
   .imagen-foco {
     width: 120px;

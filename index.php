@@ -22,7 +22,10 @@ $nombreUsuario = $_SESSION['usuario'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body class="container d-flex align-items-center min-vh-100">
+<body class="container d-flex align-items-center min-vh-100 position-relative">
+
+    <a href="php/cerrarSesion.php" class="btn btn-danger logout-btn">Cerrar sesión</a>
+
     <div class="card mx-auto">
         <div class="card-header text-center">
             <h1 class="titulo">Hola, <?php echo htmlspecialchars($nombreUsuario); ?></h1>

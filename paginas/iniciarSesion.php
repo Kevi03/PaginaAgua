@@ -34,7 +34,6 @@ if (isset($_SESSION['usuario'])) {
             </form>
         </div>
     </div>
-
     <script src="../js/sesion.js"></script>
 </body>
 </html>
