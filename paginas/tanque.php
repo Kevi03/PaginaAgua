@@ -89,21 +89,9 @@ $esp32Ip = $_SESSION['esp32Ip'];
     </div>
 
     <script>
-        const esp32Ip = "<?php echo $esp32Ip; ?>";
-        const configBtn = document.getElementById('configBtn');
-        const modal = document.getElementById('modal');
-        const cancelBtn = document.getElementById('cancelBtn');
-
-        configBtn.addEventListener('click', () => {
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        });
-
-        cancelBtn.addEventListener('click', () => {
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        });
+    const esp32Ip = "<?php echo $esp32Ip; ?>";
     </script>
     <script src="../js/tanque.js"></script>
+
 </body>
 </html>
