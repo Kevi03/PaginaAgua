@@ -22,35 +22,40 @@ $nombreUsuario = $_SESSION['usuario'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body class="container d-flex align-items-center min-vh-100 position-relative">
 
-    <a href="php/cerrarSesion.php" class="btn btn-danger logout-btn">Cerrar sesión</a>
+<body>
+    <?php require("componentes/navegacion.php") ?>
 
-    <div class="card mx-auto">
-        <div class="card-header text-center">
-            <h1 class="titulo">Hola, <?php echo htmlspecialchars($nombreUsuario); ?></h1>
-            <p class="texto">Bienvenido de nuevo.</p>
-        </div>
-        <div class="card-body">
-            <div class="d-grid gap-3">
-                <button onclick="window.location.href='paginas/configuracionIp.php'" 
-                        class="btn btn-custom">
-                    Conectarse manualmente
-                </button>
-                
-                <button onclick="window.location.href='paginas/controlFoco.php'" 
-                        class="btn btn-custom">
-                    Controlar foco
-                </button>
-                
-                <button onclick="window.location.href='paginas/tanque.php'" 
-                        class="btn btn-custom">
-                    Tanque de agua
-                </button>
+    <div class="container d-flex align-items-center min-vh-100 position-relative">
+
+        <div class="card mx-auto">
+            <div class="card-header text-center">
+                <h1 class="titulo">Hola, <?php echo htmlspecialchars($nombreUsuario); ?></h1>
+                <p class="texto">Bienvenido de nuevo.</p>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-3">
+                    <button onclick="window.location.href='paginas/configuracionIp.php'" 
+                            class="btn btn-custom">
+                        Conectarse manualmente
+                    </button>
+                    
+                    <button onclick="window.location.href='paginas/controlFoco.php'" 
+                            class="btn btn-custom">
+                        Controlar foco
+                    </button>
+                    
+                    <button onclick="window.location.href='paginas/tanque.php'" 
+                            class="btn btn-custom">
+                        Tanque de agua
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cerrarSesion.js"></script>
 </body>
+
 </html>
