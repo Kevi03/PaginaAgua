@@ -34,6 +34,7 @@ if (!isset($_SESSION['usuario'])) {
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/guardarIp.js"></script>
     <script src="../js/cerrarSesion.js"></script>
 

@@ -34,6 +34,9 @@ if (isset($_SESSION['usuario'])) {
             </form>
         </div>
     </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/sesion.js"></script>
 </body>
 </html>

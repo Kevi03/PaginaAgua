@@ -2,7 +2,7 @@
 $inicio = './index.php';
 $acercaDe = 'paginas/acercaDe.php';
 $uri = $_SERVER['REQUEST_URI'];
-if (strpos($uri, 'paginas/acercaDe.php') !== false || strpos($uri, 'paginas/configuracionIp.php.php') !== false || strpos($uri, 'paginas/controlFoco.php') !== false || strpos($uri, 'paginas/tanque.php') !== false) {
+if (strpos($uri, 'paginas/acercaDe.php') !== false || strpos($uri, 'paginas/configuracionIp.php') !== false || strpos($uri, 'paginas/controlFoco.php') !== false || strpos($uri, 'paginas/tanque.php') !== false) {
     $inicio = '../index.php';
     $acercaDe = '../paginas/acercaDe.php';
 } else if(strpos($uri, '/index.php') !== false){
