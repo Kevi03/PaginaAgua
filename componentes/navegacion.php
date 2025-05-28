@@ -12,7 +12,7 @@ if (strpos($uri, 'paginas/acercaDe.php') !== false || strpos($uri, 'paginas/conf
 
 ?>
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="white">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo $inicio ?>">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

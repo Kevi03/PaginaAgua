@@ -202,4 +202,74 @@
       width: 100px;
       height: 100px;
     }
+  } /* Variables para colores */
+  :root {
+      --fondo-principal: #FFF8F0;
+      --titulo-color: #8B5E3C;
+      --fondo-titulo: #F9E0BB;
+      --texto-color: #6D4C41;
+      --borde-color: #E6CFC1;
+      --boton-bg: #F4A261;
+      --boton-text: #FFFFFF;
   }
+  
+  /* Estilos básicos del body */
+  body {
+      font-family: sans-serif;
+      background-color: var(--fondo-principal);
+      color: var(--texto-color);
+      margin: 0;
+      padding: 0;
+  }
+  
+  /* Navbar */
+  .navbar {
+      background-color: var(--fondo-principal);
+      border-bottom: 1px solid var(--borde-color);
+      padding: 10px 20px;
+  }
+  
+  /* Estilo de los enlaces del navbar */
+  .navbar-nav .nav-link {
+      color: var(--texto-color);
+      font-size: 16px;
+      padding: 10px;
+      transition: background-color 0.3s;
+  }
+  
+  .navbar-nav .nav-link:hover {
+      background-color: var(--fondo-titulo);
+      color: var(--titulo-color);
+      border-radius: 8px;
+  }
+  
+  /* Botón Cerrar Sesión */
+  #BotonCerrar {
+      background-color: var(--boton-bg);
+      color: var(--boton-text);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  #BotonCerrar:hover {
+      background-color: #e78f4d;
+  }
+  
+  /* Responsive: Ajustes para pantallas pequeñas */
+  @media (max-width: 576px) {
+      .navbar-nav .nav-link {
+          font-size: 14px;
+          padding: 8px;
+      }
+  
+      #BotonCerrar {
+          padding: 10px 20px;
+          font-size: 14px;
+      }
+  }
+  
