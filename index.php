@@ -54,7 +54,7 @@ $nombreUsuario = $_SESSION['usuario'];
             </div>
         </div>
     </div>
-
+    <script src="js/paho-mqtt.js"></script>
     <script src="js/cerrarSesion.js"></script>
     <script src="js/mqtt-control.js"></script>
 </body>
