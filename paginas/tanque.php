@@ -100,7 +100,6 @@ $esp32Ip = $_SESSION['esp32Ip'];
         const esp32Ip = "<?php echo $esp32Ip; ?>";
     </script>
     <script src="../js/paho-mqtt.js"></script>
-    <script src="../js/mqtt-control.js"></script>
     <script src="../js/tanque.js"></script>
     <script src="../js/cerrarSesion.js"></script>
 
