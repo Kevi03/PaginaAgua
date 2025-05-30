@@ -98,7 +98,7 @@ $esp32Ip = $_SESSION['esp32Ip'];
     <script>
     const esp32Ip = "<?php echo $esp32Ip; ?>";
     </script>
-    <script src="../js/tanque.js"></script>
+     <script src="../js/mqtt-control.js"></script>
     <script src="../js/cerrarSesion.js"></script>
 
 </body>

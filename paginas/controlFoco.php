@@ -17,9 +17,9 @@ $esp32Ip = $_SESSION['esp32Ip'];
     <title>Control de Foco</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script>
 </head>
 <body>
-
     <?php require("../componentes/navegacion.php") ?>
 
     <div class="container d-flex align-items-center min-vh-100">
@@ -42,12 +42,11 @@ $esp32Ip = $_SESSION['esp32Ip'];
         </div>
     </div>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const esp32Ip = "<?php echo $esp32Ip; ?>";
     </script>
-    <script src="../js/controlFoco.js"></script>
+    <script src="../js/mqtt-control.js"></script>
     <script src="../js/cerrarSesion.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@ $nombreUsuario = $_SESSION['usuario'];
     <title>Página Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+
 </head>
 
 <body>
@@ -54,8 +55,8 @@ $nombreUsuario = $_SESSION['usuario'];
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cerrarSesion.js"></script>
+    <script src="js/mqtt-control.js"></script>
 </body>
 
 </html>
