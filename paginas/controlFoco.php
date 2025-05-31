@@ -23,6 +23,9 @@ $esp32Ip = $_SESSION['esp32Ip'];
         width: 80px;
         cursor: pointer;
       }
+      .foco-container {
+        margin: 0 15px;
+      }
     </style>
 </head>
 <body>
@@ -33,23 +36,26 @@ $esp32Ip = $_SESSION['esp32Ip'];
             <div class="card-header">
                 <h1 class="titulo">Control de Focos</h1>
             </div>
-            <div class="card-body d-flex justify-content-around">
+            <div class="card-body d-flex justify-content-center">
                 
-                <div class="text-center">
+                <!-- Foco 1 -->
+                <div class="foco-container text-center">
                     <button id="foco1Btn" type="button" class="btn btn-link p-0 border-0 bg-transparent">
                         <img id="foco1Img" class="imagen-foco" src="../img/focoApagado.png" alt="Foco 1">
                     </button>
                     <div class="mt-2 fw-bold h5">FOCO 1</div>
                 </div>
 
-                <div class="text-center">
+                <!-- Foco 2 -->
+                <div class="foco-container text-center">
                     <button id="foco2Btn" type="button" class="btn btn-link p-0 border-0 bg-transparent">
                         <img id="foco2Img" class="imagen-foco" src="../img/focoApagado.png" alt="Foco 2">
                     </button>
                     <div class="mt-2 fw-bold h5">FOCO 2</div>
                 </div>
                 
-                <div class="text-center">
+                <!-- Foco 3 -->
+                <div class="foco-container text-center">
                     <button id="foco3Btn" type="button" class="btn btn-link p-0 border-0 bg-transparent">
                         <img id="foco3Img" class="imagen-foco" src="../img/focoApagado.png" alt="Foco 3">
                     </button>
@@ -66,7 +72,6 @@ $esp32Ip = $_SESSION['esp32Ip'];
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
         const esp32Ip = "<?php echo $esp32Ip; ?>";
     </script>
@@ -74,6 +79,5 @@ $esp32Ip = $_SESSION['esp32Ip'];
     <script src="https://unpkg.com/paho-mqtt@1.1.0/mqttws31.min.js"></script>
     <script src="../js/cerrarSesion.js"></script>
     <script src="../js/controlFoco.js"></script>
-    
 </body>
 </html>

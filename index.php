@@ -58,5 +58,4 @@ $nombreUsuario = $_SESSION['usuario'];
     <script src="js/cerrarSesion.js"></script>
     <script src="js/mqtt-control.js"></script>
 </body>
-
 </html>

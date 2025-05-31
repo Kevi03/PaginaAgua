@@ -6,8 +6,8 @@ client.onMessageArrived = onMessageArrived;
 client.connect({
   onSuccess: onConnect,
   useSSL: true,
-  userName: "usuario",
-  password: "contraseña"
+  userName: "user1",
+  password: "User1"
 });
 
 function onConnect() {

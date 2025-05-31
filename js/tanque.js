@@ -20,7 +20,6 @@ let altura = 50;
 let radio = 30;
 let nivelAgua = 0;
 
-// Cargar valores guardados
 if(localStorage.getItem('altura')) altura = parseFloat(localStorage.getItem('altura'));
 if(localStorage.getItem('radio')) radio = parseFloat(localStorage.getItem('radio'));
 
