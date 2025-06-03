@@ -88,8 +88,8 @@ client.connect({
     showLoading(false);
   },
   useSSL: true,
-  userName: "usuario",
-  password: "contraseña"
+  userName: "user1",
+  password: "User1"
 });
 
 configBtn.addEventListener('click', () => {
